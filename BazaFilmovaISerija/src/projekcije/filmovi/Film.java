@@ -1,16 +1,28 @@
 package projekcije.filmovi;
+import korisnici.Korisnik;
 
+import java.util.GregorianCalendar;
 import java.util.LinkedList;
+import termin.Termin;
 
 public class Film {
 	
+	private LinkedList<Termin> listaTermina;
 	private String imeFilma;
 	private int brojBioskopa;
 	private int ocenaFilma;
 	private String zanrFilma;
 	private double trajanjeFilma;
-	private LinkedList<Film> filmovi = new LinkedList<Film>();
+	private LinkedList <Korisnik> publika = new LinkedList<Korisnik>(); //oni koji su ikad gledali taj film
 	
+	public LinkedList <Termin>getTermini(){
+		return listaTermina;
+	}
+	public void setTermini(GregorianCalendar t1, GregorianCalendar t2, GregorianCalendar t3){ //pretostavimo da za svaki film postoje 3 termina
+		listaTermina.get(0).setTermin(t1);
+		listaTermina.get(1).setTermin(t2);
+		listaTermina.get(2).setTermin(t3);
+	}
 	public String getIme() {
 		return imeFilma;
 	}
@@ -53,18 +65,15 @@ public class Film {
 			throw new RuntimeException("Greska!");
 		this.trajanjeFilma = trajanje;
 	}
-	
-	public LinkedList<Film> getFilmovi() {
-		return filmovi;
-	}
-	public void setFilmovi(LinkedList<Film> filmovi) {
-		this.filmovi = filmovi;
+	public LinkedList <Korisnik> getPublika(){
+		return publika;
 	}
 	@Override
 	public String toString() {
 		return "film [Ime= " + imeFilma + ", Broj bioskopa= " + brojBioskopa + ","
-				+ "Ocena= " + ocenaFilma + ", Zanr= " + zanrFilma + "Vreme trajanja= " + trajanjeFilma+ "]";
+				+ "Ocena= " + ocenaFilma + ", Zanr= " + zanrFilma + "Vreme trajanja= " + trajanjeFilma+ " Termini=" +listaTermina.toString()+"]";
 	}
+	//sta radi ovo poslednje?
 	
 	
 }
