@@ -10,13 +10,13 @@ import java.util.GregorianCalendar;
 import java.util.LinkedList;
 
 public class Metode {
-	private LinkedList<Film> filmovi = new LinkedList<Film>();
+	public static LinkedList<Film> filmovi = new LinkedList<Film>();
 	
 	public LinkedList<Film> vratiListuFilmova(){
 		return filmovi;
 	}
 	
-	public void napuniListuFilmova(Film f){
+	public static void napuniListuFilmova(Film f){
 		filmovi.add(f);
 	}
 	

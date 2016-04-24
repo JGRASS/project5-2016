@@ -8,11 +8,11 @@ import termin.Termin;
 public class Film {
 	
 	private LinkedList<Termin> listaTermina;
-	private String imeFilma;
-	private int brojBioskopa;
-	private int ocenaFilma;
-	private String zanrFilma;
-	private double trajanjeFilma;
+	private static String imeFilma;
+	private static int brojBioskopa;
+	private static int ocenaFilma;
+	private static String zanrFilma;
+	private static double trajanjeFilma;
 	private LinkedList <Korisnik> publika = new LinkedList<Korisnik>(); //oni koji su ikad gledali taj film
 	
 	public LinkedList <Termin>getTermini(){
@@ -23,47 +23,47 @@ public class Film {
 		listaTermina.get(1).setTermin(t2);
 		listaTermina.get(2).setTermin(t3);
 	}
-	public String getIme() {
+	public static String getIme() {
 		return imeFilma;
 	}
-	public void setIme(String ime) {
+	public static void setIme(String ime) {
 		if(ime==null || ime.isEmpty())
 			throw new RuntimeException("Greska!");
-		this.imeFilma = ime;
+		imeFilma = ime;
 	}
-	public int getBrojBioskopa() {
+	public static int getBrojBioskopa() {
 		return brojBioskopa;
 	}
-	public void setBrojBioskopa(int brojBioskopa) {
+	public static void setBrojBioskopa(int broj) {
 		if(brojBioskopa<=0)
 			throw new RuntimeException("Greska!");
-		this.brojBioskopa = brojBioskopa;
+		brojBioskopa = broj;
 	}
-	public int getOcena() {
+	public static int getOcena() {
 		return ocenaFilma;
 	}
-	public void setOcena(int ocena) {
+	public static void setOcena(int ocena) {
 		if(ocena>5 || ocena<0)
 			throw new RuntimeException("Greska!");
-		this.ocenaFilma = ocena;
+		ocenaFilma = ocena;
 	}
-	public String getZanr() {
+	public static String getZanr() {
 		return zanrFilma;
 	}
-	public void setZanr(String zanr) {
+	public static void setZanr(String zanr) {
 		if(zanr==null || zanr.isEmpty())
 			throw new RuntimeException("Greska!");
-		this.zanrFilma = zanr;
+		zanrFilma = zanr;
 	}
 	
 	
-	public double getTrajanje() {
+	public static double getTrajanje() {
 		return trajanjeFilma;
 	}
-	public void setTrajanje(double trajanje) {
+	public static void setTrajanje(double trajanje) {
 		if(trajanje<=0)
 			throw new RuntimeException("Greska!");
-		this.trajanjeFilma = trajanje;
+		trajanjeFilma = trajanje;
 	}
 	public LinkedList <Korisnik> getPublika(){
 		return publika;

@@ -7,7 +7,7 @@ public class Serija {
 	private String imeSerije;
 	private int ocenaSerije;
 	private double trajanjeSerije;
-	private LinkedList<Serija> serije = new LinkedList<Serija>();
+	public static LinkedList<Serija> serije = new LinkedList<Serija>();
 	
 	public String getImeSerije() {
 		return imeSerije;
