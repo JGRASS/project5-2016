@@ -89,6 +89,10 @@ public class DodajFilm extends JFrame {
 		getContentPane().add(btnDodaj);
 		
 		JButton btnOdustani = new JButton("Odustani");
+		btnOdustani.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnOdustani.setBounds(212, 55, 75, 23);
 		getContentPane().add(btnOdustani);
 		getContentPane().setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{lblImefilma, txtIme, lblOcenaFilma, txtOcena, lblBrojBioskopa, txtBroj, lblZanrFilma, txtZanr, lblTrajanjeFilma, txtTrajanje, btnDodaj, btnOdustani}));

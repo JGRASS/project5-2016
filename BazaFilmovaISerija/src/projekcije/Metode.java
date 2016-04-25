@@ -4,6 +4,7 @@ import termin.Termin;
 
 
 import projekcije.filmovi.Film;
+import projekcije.serije.Serija;
 import korisnici.Korisnik;
 
 import java.util.GregorianCalendar;
@@ -11,6 +12,7 @@ import java.util.LinkedList;
 
 public class Metode {
 	public static LinkedList<Film> filmovi = new LinkedList<Film>();
+	public static LinkedList<Serija> serije = new LinkedList<Serija>();
 	
 	public LinkedList<Film> vratiListuFilmova(){
 		return filmovi;
@@ -19,6 +21,7 @@ public class Metode {
 	public static void napuniListuFilmova(Film f){
 		filmovi.add(f);
 	}
+	
 	
 	public int vratiBrojGledalacaFilmaUTerminu(Termin t, String naziv){
 		int i = 0;
@@ -74,5 +77,10 @@ public class Metode {
 				filmoviJednogZanra.add(filmovi.get(i));
 		}
 		return filmoviJednogZanra;
+	}
+
+	public static void napuniListuSerija(Serija s) {
+		serije.add(s);
+		
 	}
 }

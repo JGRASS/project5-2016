@@ -10,6 +10,7 @@ import java.io.FileReader;
 import java.util.Locale.FilteringMode;
 
 import projekcije.filmovi.Film;
+import projekcije.serije.Serija;
 
 public class GUIKontroler {
 	
@@ -32,6 +33,11 @@ public class GUIKontroler {
 		prozor.setVisible(true);
 		prozor.setLocationRelativeTo(null);
 	}
+	public static void prikaziDodajSeriju(){
+		DodajSeriju prozor1 = new DodajSeriju();
+		prozor1.setVisible(true);
+		prozor1.setLocationRelativeTo(null);
+	}
 	public static void unesiFilm(String ime, String zanr, int ocena, int brojBioskopa, double trajanje){
 		Film f = new Film();
 		
@@ -42,6 +48,15 @@ public class GUIKontroler {
 		f.setTrajanje(trajanje);
 		
 		projekcije.Metode.napuniListuFilmova(f);
+	}
+	public static void unesiSeriju(String ime, int ocena, double trajanje){
+		Serija s = new Serija();
+		
+		s.setImeSerije(ime);
+		s.setOcenaSerije(ocena);
+		s.setTrajanjeSerije(trajanje);
+		
+		projekcije.Metode.napuniListuSerija(s);
 	}
 
 
