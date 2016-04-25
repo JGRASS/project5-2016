@@ -168,7 +168,7 @@ public class BioskopGUI extends JFrame {
 							Integer.parseInt(textField.getText()));
 				}
 			});
-			btnDodajKorisnika.setBounds(29, 69, 105, 23);
+			btnDodajKorisnika.setBounds(50, 65, 130, 23);
 		}
 		return btnDodajKorisnika;
 	}
