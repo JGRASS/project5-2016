@@ -13,6 +13,7 @@ import java.util.LinkedList;
 public class Metode {
 	public static LinkedList<Film> filmovi = new LinkedList<Film>();
 	public static LinkedList<Serija> serije = new LinkedList<Serija>();
+	public static LinkedList<Korisnik> korisnici = new LinkedList<Korisnik>();
 	
 	public static LinkedList<Film> vratiListuFilmova(){
 		return filmovi;
@@ -81,6 +82,11 @@ public class Metode {
 
 	public static void napuniListuSerija(Serija s) {
 		serije.add(s);
+		
+	}
+
+	public static void napuniListuKorisnika(Korisnik k) {
+		korisnici.add(k);
 		
 	}
 }

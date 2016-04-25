@@ -9,6 +9,8 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.util.List;
 import java.util.Locale.FilteringMode;
+
+import korisnici.Korisnik;
 import projekcije.filmovi.Film;
 import projekcije.serije.Serija;
 
@@ -60,6 +62,15 @@ public class GUIKontroler {
 		projekcije.Metode.napuniListuSerija(s);
 		
 	}
+
+	public static void unesiKorisnika(String ime, int ID){
+		Korisnik k = new Korisnik();
+		
+		k.setImeIPrezime(ime);
+		k.setID(ID);
+		
+		projekcije.Metode.napuniListuKorisnika(k);
+		}
 
 
 	public static List<Film> vratiSveFilmove() {
