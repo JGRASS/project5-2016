@@ -94,7 +94,7 @@ public class BioskopGUI extends JFrame {
 		JButton btnDodajSeriju = new JButton("Dodaj seriju");
 		btnDodajSeriju.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				projekcije.serije.Serija.serije.add(s);
+				GUIKontroler.prikaziDodajSeriju();
 			}
 		});
 		btnDodajSeriju.setPreferredSize(new Dimension(105, 25));

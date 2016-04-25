@@ -21,7 +21,6 @@ import java.awt.Component;
 public class DodajFilm extends JFrame {
 	private static JTextField txtIme;
 	private static JTextField txtOcena;
-	private static JTextField txtBroj;
 	private static JTextField txtZanr;
 	private static JTextField txtTrajanje;
 	public DodajFilm() {
@@ -50,15 +49,6 @@ public class DodajFilm extends JFrame {
 		getContentPane().add(txtOcena);
 		txtOcena.setColumns(10);
 		
-		JLabel lblBrojBioskopa = new JLabel("Broj bioskopa");
-		lblBrojBioskopa.setBounds(330, 8, 64, 14);
-		getContentPane().add(lblBrojBioskopa);
-		
-		txtBroj = new JTextField();
-		txtBroj.setBounds(22, 30, 86, 20);
-		getContentPane().add(txtBroj);
-		txtBroj.setColumns(10);
-		
 		JLabel lblZanrFilma = new JLabel("Zanr filma");
 		lblZanrFilma.setBounds(113, 33, 47, 14);
 		getContentPane().add(lblZanrFilma);
@@ -82,7 +72,7 @@ public class DodajFilm extends JFrame {
 		btnDodaj.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bioskop.gui.GUIKontroler.unesiFilm(txtIme.getText(), txtZanr.getText(),
-						Integer.parseInt(txtOcena.getText()), Integer.parseInt(txtBroj.getText()), Double.parseDouble(txtTrajanje.getText()));
+						Integer.parseInt(txtOcena.getText()), Double.parseDouble(txtTrajanje.getText()));
 				
 			}
 		});
@@ -95,14 +85,13 @@ public class DodajFilm extends JFrame {
 		});
 		btnOdustani.setBounds(212, 55, 75, 23);
 		getContentPane().add(btnOdustani);
-		getContentPane().setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{lblImefilma, txtIme, lblOcenaFilma, txtOcena, lblBrojBioskopa, txtBroj, lblZanrFilma, txtZanr, lblTrajanjeFilma, txtTrajanje, btnDodaj, btnOdustani}));
+		getContentPane().setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{lblImefilma, txtIme, lblOcenaFilma, txtOcena, lblZanrFilma, txtZanr, lblTrajanjeFilma, txtTrajanje, btnDodaj, btnOdustani}));
 	}
 	
 	public static void unesiUFajl(){
 		String ime =txtIme.getText();
 		String zanr = txtZanr.getText();
 		int ocena = Integer.parseInt(txtOcena.getText());
-		int brojBioskopa = Integer.parseInt(txtBroj.getText());
 		double trajanje = Double.parseDouble(txtTrajanje.getText());
 		
 		try {
@@ -113,8 +102,6 @@ public class DodajFilm extends JFrame {
 			out.println(zanr);
 			System.out.println("Ocena filma: ");
 			out.println(ocena);
-			System.out.println("Broj bioskopa: ");
-			out.print(brojBioskopa);
 			System.out.println("Trajanje filma: ");
 			out.print(trajanje);
 			out.close();

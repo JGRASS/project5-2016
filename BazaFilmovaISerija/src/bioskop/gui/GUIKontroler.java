@@ -38,10 +38,9 @@ public class GUIKontroler {
 		prozor1.setVisible(true);
 		prozor1.setLocationRelativeTo(null);
 	}
-	public static void unesiFilm(String ime, String zanr, int ocena, int brojBioskopa, double trajanje){
+	public static void unesiFilm(String ime, String zanr, int ocena,  double trajanje){
 		Film f = new Film();
 		
-		f.setBrojBioskopa(brojBioskopa);
 		f.setIme(ime);
 		f.setZanr(zanr);
 		f.setOcena(ocena);
