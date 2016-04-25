@@ -23,12 +23,14 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
 
 public class BioskopGUI extends JFrame {
 
 	private JPanel contentPane;
 	private Film f = new Film();
 	private Serija s = new Serija();
+	private JTextField txtImeKorisnika;
 
 	/**
 	 * Launch the application.
@@ -39,7 +41,7 @@ public class BioskopGUI extends JFrame {
 	 */
 	public BioskopGUI() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 634, 434);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -59,12 +61,7 @@ public class BioskopGUI extends JFrame {
 		JButton btnDodajFilm = new JButton("Dodaj Film");
 		btnDodajFilm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				try {
-					projekcije.Metode.napuniListuFilmova(f);
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				GUIKontroler.prikaziDodajProzor();
 			}
 		});
 		btnDodajFilm.setPreferredSize(new Dimension(105, 25));
@@ -77,14 +74,7 @@ public class BioskopGUI extends JFrame {
 		JButton btnPrikaziFilmove = new JButton("Prikazi filmove");
 		btnPrikaziFilmove.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				try {
-					for(int i = 0; i < projekcije.Metode.filmovi.size(); i++){
-						System.out.println(projekcije.Metode.filmovi.get(i));
-					}
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				
 				
 			}
 		});
@@ -118,6 +108,19 @@ public class BioskopGUI extends JFrame {
 		});
 		btnPrikaziSerije.setPreferredSize(new Dimension(105, 25));
 		panel.add(btnPrikaziSerije);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setPreferredSize(new Dimension(150, 120));
+		contentPane.add(panel_1, BorderLayout.SOUTH);
+		panel_1.setLayout(null);
+		
+		JLabel lblImeKorisnika = new JLabel("Ime korisnika");
+		lblImeKorisnika.setBounds(29, 11, 62, 14);
+		panel_1.add(lblImeKorisnika);
+		
+		txtImeKorisnika = new JTextField();
+		txtImeKorisnika.setBounds(145, 8, 86, 20);
+		panel_1.add(txtImeKorisnika);
+		txtImeKorisnika.setColumns(10);
 	}
-
 }
