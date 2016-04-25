@@ -24,6 +24,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
+import javax.swing.JTable;
 
 public class BioskopGUI extends JFrame {
 
@@ -31,6 +32,7 @@ public class BioskopGUI extends JFrame {
 	private Film f = new Film();
 	private Serija s = new Serija();
 	private JTextField txtImeKorisnika;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -49,6 +51,11 @@ public class BioskopGUI extends JFrame {
 		
 		JScrollPane scrollPane = new JScrollPane();
 		contentPane.add(scrollPane, BorderLayout.CENTER);
+		
+		table = new JTable();
+		
+		
+		scrollPane.setViewportView(table);
 		
 		JPanel panel = new JPanel();
 		panel.setPreferredSize(new Dimension(150, 10));
