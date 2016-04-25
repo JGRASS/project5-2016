@@ -34,6 +34,7 @@ public class BioskopGUI extends JFrame {
 	private JTextField txtImeKorisnika;
 	private static JTable table;
 
+
 	/**
 	 * Launch the application.
 	 */
@@ -120,15 +121,18 @@ public class BioskopGUI extends JFrame {
 		contentPane.add(panel_1, BorderLayout.SOUTH);
 		panel_1.setLayout(null);
 		
+
 		JLabel lblImeKorisnika = new JLabel("Ime korisnika");
 		lblImeKorisnika.setBounds(29, 11, 86, 14);
 		panel_1.add(lblImeKorisnika);
 		
 		txtImeKorisnika = new JTextField();
-		txtImeKorisnika.setBounds(145, 8, 86, 20);
+		txtImeKorisnika.setBounds(132, 8, 86, 20);
 		panel_1.add(txtImeKorisnika);
 		txtImeKorisnika.setColumns(10);
+		
 	}
+	
 	
 	public static void osveziTabelu(){
 		FilmTableModel model = (FilmTableModel) table.getModel();
