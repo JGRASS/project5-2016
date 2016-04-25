@@ -32,7 +32,7 @@ public class BioskopGUI extends JFrame {
 	private Film f = new Film();
 	private Serija s = new Serija();
 	private JTextField txtImeKorisnika;
-	private JTable table;
+	private static JTable table;
 
 	/**
 	 * Launch the application.
@@ -57,7 +57,7 @@ public class BioskopGUI extends JFrame {
 		scrollPane.setViewportView(table);
 		
 		JPanel panel = new JPanel();
-		panel.setPreferredSize(new Dimension(150, 10));
+		panel.setPreferredSize(new Dimension(170, 10));
 		contentPane.add(panel, BorderLayout.EAST);
 		
 		JLabel lblDodajFilm = new JLabel("Dodaj film");
@@ -70,7 +70,7 @@ public class BioskopGUI extends JFrame {
 				GUIKontroler.prikaziDodajProzor();
 			}
 		});
-		btnDodajFilm.setPreferredSize(new Dimension(105, 25));
+		btnDodajFilm.setPreferredSize(new Dimension(120, 25));
 		panel.add(btnDodajFilm);
 		
 		JLabel lblPrikaziFilmove = new JLabel("Prikazi filmove");
@@ -84,7 +84,7 @@ public class BioskopGUI extends JFrame {
 				
 			}
 		});
-		btnPrikaziFilmove.setPreferredSize(new Dimension(105, 25));
+		btnPrikaziFilmove.setPreferredSize(new Dimension(120, 25));
 		panel.add(btnPrikaziFilmove);
 		
 		JLabel lblDodajSeriju = new JLabel("Dodaj seriju");
@@ -97,7 +97,7 @@ public class BioskopGUI extends JFrame {
 				GUIKontroler.prikaziDodajSeriju();
 			}
 		});
-		btnDodajSeriju.setPreferredSize(new Dimension(105, 25));
+		btnDodajSeriju.setPreferredSize(new Dimension(120, 25));
 		panel.add(btnDodajSeriju);
 		
 		JLabel lblPrikaziSerije = new JLabel("Prikazi serije");
@@ -112,7 +112,7 @@ public class BioskopGUI extends JFrame {
 				}
 			}
 		});
-		btnPrikaziSerije.setPreferredSize(new Dimension(105, 25));
+		btnPrikaziSerije.setPreferredSize(new Dimension(120, 25));
 		panel.add(btnPrikaziSerije);
 		
 		JPanel panel_1 = new JPanel();
@@ -121,7 +121,7 @@ public class BioskopGUI extends JFrame {
 		panel_1.setLayout(null);
 		
 		JLabel lblImeKorisnika = new JLabel("Ime korisnika");
-		lblImeKorisnika.setBounds(29, 11, 62, 14);
+		lblImeKorisnika.setBounds(29, 11, 86, 14);
 		panel_1.add(lblImeKorisnika);
 		
 		txtImeKorisnika = new JTextField();
@@ -129,4 +129,10 @@ public class BioskopGUI extends JFrame {
 		panel_1.add(txtImeKorisnika);
 		txtImeKorisnika.setColumns(10);
 	}
+	
+	public static void osveziTabelu(){
+		FilmTableModel model = (FilmTableModel) table.getModel();
+		model.ucitajFilmove(GUIKontroler.vratiSveFilmove());
+	}
+	
 }

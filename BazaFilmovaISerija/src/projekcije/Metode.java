@@ -14,7 +14,7 @@ public class Metode {
 	public static LinkedList<Film> filmovi = new LinkedList<Film>();
 	public static LinkedList<Serija> serije = new LinkedList<Serija>();
 	
-	public LinkedList<Film> vratiListuFilmova(){
+	public static LinkedList<Film> vratiListuFilmova(){
 		return filmovi;
 	}
 	

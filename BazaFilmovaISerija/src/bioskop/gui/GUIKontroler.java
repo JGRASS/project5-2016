@@ -7,8 +7,8 @@ import java.io.DataOutputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.util.List;
 import java.util.Locale.FilteringMode;
-
 import projekcije.filmovi.Film;
 import projekcije.serije.Serija;
 
@@ -47,6 +47,8 @@ public class GUIKontroler {
 		f.setTrajanje(trajanje);
 		
 		projekcije.Metode.napuniListuFilmova(f);
+		BioskopGUI.osveziTabelu();
+		
 	}
 	public static void unesiSeriju(String ime, int ocena, double trajanje){
 		Serija s = new Serija();
@@ -56,7 +58,11 @@ public class GUIKontroler {
 		s.setTrajanjeSerije(trajanje);
 		
 		projekcije.Metode.napuniListuSerija(s);
+		
 	}
 
 
+	public static List<Film> vratiSveFilmove() {
+		return projekcije.Metode.vratiListuFilmova();
+	}
 }

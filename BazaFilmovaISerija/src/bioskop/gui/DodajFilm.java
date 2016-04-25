@@ -32,47 +32,48 @@ public class DodajFilm extends JFrame {
 		getContentPane().setLayout(null);
 		
 		JLabel lblImefilma = new JLabel("Ime filma");
-		lblImefilma.setBounds(39, 8, 43, 14);
+		lblImefilma.setBounds(36, 33, 77, 14);
 		getContentPane().add(lblImefilma);
 		
 		txtIme = new JTextField();
-		txtIme.setBounds(87, 5, 86, 20);
+		txtIme.setBounds(159, 30, 86, 20);
 		getContentPane().add(txtIme);
 		txtIme.setColumns(10);
 		
 		JLabel lblOcenaFilma = new JLabel("Ocena filma");
-		lblOcenaFilma.setBounds(178, 8, 56, 14);
+		lblOcenaFilma.setBounds(36, 109, 77, 14);
 		getContentPane().add(lblOcenaFilma);
 		
 		txtOcena = new JTextField();
-		txtOcena.setBounds(239, 5, 86, 20);
+		txtOcena.setBounds(159, 106, 86, 20);
 		getContentPane().add(txtOcena);
 		txtOcena.setColumns(10);
 		
 		JLabel lblZanrFilma = new JLabel("Zanr filma");
-		lblZanrFilma.setBounds(113, 33, 47, 14);
+		lblZanrFilma.setBounds(36, 69, 91, 12);
 		getContentPane().add(lblZanrFilma);
 		
 		txtZanr = new JTextField();
-		txtZanr.setBounds(165, 30, 86, 20);
+		txtZanr.setBounds(159, 61, 86, 20);
 		getContentPane().add(txtZanr);
 		txtZanr.setColumns(10);
 		
 		JLabel lblTrajanjeFilma = new JLabel("Trajanje filma");
-		lblTrajanjeFilma.setBounds(256, 33, 65, 14);
+		lblTrajanjeFilma.setBounds(36, 149, 113, 14);
 		getContentPane().add(lblTrajanjeFilma);
 		
 		txtTrajanje = new JTextField();
-		txtTrajanje.setBounds(326, 30, 86, 20);
+		txtTrajanje.setBounds(159, 146, 86, 20);
 		getContentPane().add(txtTrajanje);
 		txtTrajanje.setColumns(10);
 		
 		JButton btnDodaj = new JButton("Dodaj");
-		btnDodaj.setBounds(146, 55, 61, 23);
+		btnDodaj.setBounds(121, 193, 113, 23);
 		btnDodaj.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bioskop.gui.GUIKontroler.unesiFilm(txtIme.getText(), txtZanr.getText(),
 						Integer.parseInt(txtOcena.getText()), Double.parseDouble(txtTrajanje.getText()));
+				dispose();
 				
 			}
 		});
@@ -83,33 +84,11 @@ public class DodajFilm extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnOdustani.setBounds(212, 55, 75, 23);
+		btnOdustani.setBounds(271, 193, 130, 23);
 		getContentPane().add(btnOdustani);
 		getContentPane().setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{lblImefilma, txtIme, lblOcenaFilma, txtOcena, lblZanrFilma, txtZanr, lblTrajanjeFilma, txtTrajanje, btnDodaj, btnOdustani}));
 	}
 	
-	public static void unesiUFajl(){
-		String ime =txtIme.getText();
-		String zanr = txtZanr.getText();
-		int ocena = Integer.parseInt(txtOcena.getText());
-		double trajanje = Double.parseDouble(txtTrajanje.getText());
-		
-		try {
-			PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("filmovi.txt")));
-			System.out.println("Ime filma: ");
-			out.println(ime);
-			System.out.println("Zanr filma: ");
-			out.println(zanr);
-			System.out.println("Ocena filma: ");
-			out.println(ocena);
-			System.out.println("Trajanje filma: ");
-			out.print(trajanje);
-			out.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
+	
 	
 }
