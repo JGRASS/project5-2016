@@ -1,9 +1,7 @@
 package korisnici;
 
 import java.util.LinkedList;
-/**
- * 
- */
+
 
 import korisnici.interfejs.InterfejsKorisnik;
 import projekcije.filmovi.Film;
