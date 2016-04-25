@@ -33,6 +33,8 @@ public class BioskopGUI extends JFrame {
 	private Serija s = new Serija();
 	private JTextField txtImeKorisnika;
 	private JTable table;
+	private JLabel lblIdKorisnika;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -94,7 +96,7 @@ public class BioskopGUI extends JFrame {
 		JButton btnDodajSeriju = new JButton("Dodaj seriju");
 		btnDodajSeriju.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				projekcije.serije.Serija.serije.add(s);
+				GUIKontroler.prikaziDodajSeriju();
 			}
 		});
 		btnDodajSeriju.setPreferredSize(new Dimension(105, 25));
@@ -120,13 +122,30 @@ public class BioskopGUI extends JFrame {
 		contentPane.add(panel_1, BorderLayout.SOUTH);
 		panel_1.setLayout(null);
 		
-		JLabel lblImeKorisnika = new JLabel("Ime korisnika");
-		lblImeKorisnika.setBounds(29, 11, 62, 14);
+		JLabel lblImeKorisnika = new JLabel("Ime korisnika:");
+		lblImeKorisnika.setBounds(29, 11, 78, 14);
 		panel_1.add(lblImeKorisnika);
 		
 		txtImeKorisnika = new JTextField();
-		txtImeKorisnika.setBounds(145, 8, 86, 20);
+		txtImeKorisnika.setBounds(132, 8, 86, 20);
 		panel_1.add(txtImeKorisnika);
 		txtImeKorisnika.setColumns(10);
+		panel_1.add(getLblIdKorisnika());
+		panel_1.add(getTextField());
+	}
+	private JLabel getLblIdKorisnika() {
+		if (lblIdKorisnika == null) {
+			lblIdKorisnika = new JLabel("ID korisnika:");
+			lblIdKorisnika.setBounds(29, 36, 78, 14);
+		}
+		return lblIdKorisnika;
+	}
+	private JTextField getTextField() {
+		if (textField == null) {
+			textField = new JTextField();
+			textField.setColumns(10);
+			textField.setBounds(132, 33, 86, 20);
+		}
+		return textField;
 	}
 }
