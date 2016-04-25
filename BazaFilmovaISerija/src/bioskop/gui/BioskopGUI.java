@@ -53,8 +53,7 @@ public class BioskopGUI extends JFrame {
 		contentPane.add(scrollPane, BorderLayout.CENTER);
 		
 		table = new JTable();
-		
-		
+		table.setModel(new FilmTableModel(null));
 		scrollPane.setViewportView(table);
 		
 		JPanel panel = new JPanel();
