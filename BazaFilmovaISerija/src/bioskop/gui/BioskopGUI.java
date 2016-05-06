@@ -111,11 +111,10 @@ public class BioskopGUI extends JFrame {
 		JButton btnPrikaziSerije = new JButton("Prikazi serije");
 		btnPrikaziSerije.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				for(int i = 0; i < projekcije.serije.Serija.serije.size(); i++){
-					System.out.println(projekcije.serije.Serija.serije.get(i));
-				}
+				GUIKontroler.prikaziListuSerija();
 			}
 		});
+		
 		btnPrikaziSerije.setPreferredSize(new Dimension(120, 25));
 		panel.add(btnPrikaziSerije);
 		
@@ -140,10 +139,11 @@ public class BioskopGUI extends JFrame {
 	}
 	
 	
-	public static void osveziTabelu(){
+	public static void osveziTabeluFilmova(){
 		FilmTableModel model = (FilmTableModel) table.getModel();
 		model.ucitajFilmove(GUIKontroler.vratiSveFilmove());
 	}
+	
 	private JLabel getLblIdKorisnika() {
 		if (lblIdKorisnika == null) {
 			lblIdKorisnika = new JLabel("ID korisnika:");

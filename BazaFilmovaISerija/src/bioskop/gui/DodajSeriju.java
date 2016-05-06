@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Dimension;
 
 public class DodajSeriju extends JFrame {
 	private JPanel panel;
@@ -19,13 +20,19 @@ public class DodajSeriju extends JFrame {
 	private JLabel lblTrajanjeSerije;
 	private JButton button;
 	private JButton btnOdustani;
+	private JLabel lblMinuta;
 	public DodajSeriju() {
+		setTitle("Dodaj seriju");
+		setMinimumSize(new Dimension(500, 400));
+		setPreferredSize(new Dimension(150, 150));
 		getContentPane().add(getPanel(), BorderLayout.CENTER);
 	}
 
 	private JPanel getPanel() {
 		if (panel == null) {
 			panel = new JPanel();
+			panel.setMinimumSize(new Dimension(150, 150));
+			panel.setPreferredSize(new Dimension(130, 130));
 			panel.setLayout(null);
 			panel.add(getLblImeSerije());
 			panel.add(getTextFieldS());
@@ -35,6 +42,7 @@ public class DodajSeriju extends JFrame {
 			panel.add(getLblTrajanjeSerije());
 			panel.add(getButton());
 			panel.add(getBtnOdustani());
+			panel.add(getLblMinuta());
 		}
 		return panel;
 	}
@@ -64,7 +72,7 @@ public class DodajSeriju extends JFrame {
 	private JTextField getTrajanjeS() {
 		if (trajanjeS == null) {
 			trajanjeS = new JTextField();
-			trajanjeS.setBounds(94, 99, 86, 20);
+			trajanjeS.setBounds(119, 98, 60, 20);
 			trajanjeS.setColumns(10);
 		}
 		return trajanjeS;
@@ -79,7 +87,7 @@ public class DodajSeriju extends JFrame {
 	private JLabel getLblTrajanjeSerije() {
 		if (lblTrajanjeSerije == null) {
 			lblTrajanjeSerije = new JLabel("Trajanje serije:");
-			lblTrajanjeSerije.setBounds(10, 97, 74, 22);
+			lblTrajanjeSerije.setBounds(10, 97, 99, 22);
 		}
 		return lblTrajanjeSerije;
 	}
@@ -93,7 +101,7 @@ public class DodajSeriju extends JFrame {
 					
 				}
 			});
-			button.setBounds(122, 128, 61, 23);
+			button.setBounds(65, 144, 115, 23);
 		}
 		return button;
 	}
@@ -102,10 +110,18 @@ public class DodajSeriju extends JFrame {
 			btnOdustani = new JButton("Odustani");
 			btnOdustani.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
+					dispose();
 				}
 			});
-			btnOdustani.setBounds(191, 128, 75, 23);
+			btnOdustani.setBounds(54, 178, 138, 23);
 		}
 		return btnOdustani;
+	}
+	private JLabel getLblMinuta() {
+		if (lblMinuta == null) {
+			lblMinuta = new JLabel("minuta");
+			lblMinuta.setBounds(201, 101, 74, 14);
+		}
+		return lblMinuta;
 	}
 }

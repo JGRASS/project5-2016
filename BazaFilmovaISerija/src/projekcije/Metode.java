@@ -9,6 +9,7 @@ import korisnici.Korisnik;
 
 import java.util.GregorianCalendar;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Metode {
 	public static LinkedList<Film> filmovi = new LinkedList<Film>();
@@ -84,9 +85,15 @@ public class Metode {
 		serije.add(s);
 		
 	}
+	
 
 	public static void napuniListuKorisnika(Korisnik k) {
 		korisnici.add(k);
 		
+	}
+
+	public static LinkedList<Serija> vratiListuSerija() {
+		
+		return serije;
 	}
 }

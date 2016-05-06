@@ -7,6 +7,7 @@ import java.io.DataOutputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale.FilteringMode;
 
@@ -40,6 +41,7 @@ public class GUIKontroler {
 		prozor1.setVisible(true);
 		prozor1.setLocationRelativeTo(null);
 	}
+	
 	public static void unesiFilm(String ime, String zanr, int ocena,  double trajanje){
 		Film f = new Film();
 		
@@ -49,19 +51,10 @@ public class GUIKontroler {
 		f.setTrajanje(trajanje);
 		
 		projekcije.Metode.napuniListuFilmova(f);
-		BioskopGUI.osveziTabelu();
+		BioskopGUI.osveziTabeluFilmova();
 		
 	}
-	public static void unesiSeriju(String ime, int ocena, double trajanje){
-		Serija s = new Serija();
-		
-		s.setImeSerije(ime);
-		s.setOcenaSerije(ocena);
-		s.setTrajanjeSerije(trajanje);
-		
-		projekcije.Metode.napuniListuSerija(s);
-		
-	}
+	
 
 	public static void unesiKorisnika(String ime, int ID){
 		Korisnik k = new Korisnik();
@@ -76,4 +69,25 @@ public class GUIKontroler {
 	public static List<Film> vratiSveFilmove() {
 		return projekcije.Metode.vratiListuFilmova();
 	}
+	
+	
+	
+	public static void prikaziListuSerija() {
+			PrikaziSerijeGUI prozor = new PrikaziSerijeGUI();
+			prozor.setVisible(true);
+			prozor.setLocationRelativeTo(null);
+		}	
+	public static void unesiSeriju(String ime, int ocena, double trajanje){
+		Serija s = new Serija();
+		
+		s.setImeSerije(ime);
+		s.setOcenaSerije(ocena);
+		s.setTrajanjeSerije(trajanje);
+		
+		projekcije.Metode.napuniListuSerija(s);
+		PrikaziSerijeGUI.osveziTabeluSerija();
+		
+	}
 }
+	
+
