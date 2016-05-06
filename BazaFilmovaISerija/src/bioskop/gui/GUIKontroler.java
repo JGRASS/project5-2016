@@ -12,16 +12,19 @@ import java.util.List;
 import java.util.Locale.FilteringMode;
 
 import korisnici.Korisnik;
+import projekcije.Metode;
 import projekcije.filmovi.Film;
 import projekcije.serije.Serija;
 
 public class GUIKontroler {
-	
+	public static BioskopGUI frame;
+	public static Metode metoda;
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					BioskopGUI frame = new BioskopGUI();
+					metoda = new Metode();
+					frame = new BioskopGUI();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -50,11 +53,33 @@ public class GUIKontroler {
 		f.setOcena(ocena);
 		f.setTrajanje(trajanje);
 		
-		projekcije.Metode.napuniListuFilmova(f);
+		metoda.napuniListuFilmova(f);
 		BioskopGUI.osveziTabeluFilmova();
 		
 	}
 	
+
+	public static List<Film> vratiSveFilmove() {
+		return projekcije.Metode.vratiListuFilmova();
+	}
+			
+	public static void unesiSeriju(String ime, int ocena, double trajanje){
+		Serija s = new Serija();
+		
+		s.setImeSerije(ime);
+		s.setOcenaSerije(ocena);
+		s.setTrajanjeSerije(trajanje);
+		
+		metoda.napuniListuSerija(s);
+		PrikaziSerijeGUI.osveziTabeluSerija();
+		
+	}
+	public static void prikaziListuSerija() {
+		PrikaziSerijeGUI prozor = new PrikaziSerijeGUI();
+		prozor.setVisible(true);
+		prozor.setLocationRelativeTo(null);
+	}
+
 
 	public static void unesiKorisnika(String ime, int ID){
 		Korisnik k = new Korisnik();
@@ -65,29 +90,6 @@ public class GUIKontroler {
 		projekcije.Metode.napuniListuKorisnika(k);
 		}
 
-
-	public static List<Film> vratiSveFilmove() {
-		return projekcije.Metode.vratiListuFilmova();
-	}
-	
-	
-	
-	public static void prikaziListuSerija() {
-			PrikaziSerijeGUI prozor = new PrikaziSerijeGUI();
-			prozor.setVisible(true);
-			prozor.setLocationRelativeTo(null);
-		}	
-	public static void unesiSeriju(String ime, int ocena, double trajanje){
-		Serija s = new Serija();
-		
-		s.setImeSerije(ime);
-		s.setOcenaSerije(ocena);
-		s.setTrajanjeSerije(trajanje);
-		
-		projekcije.Metode.napuniListuSerija(s);
-		PrikaziSerijeGUI.osveziTabeluSerija();
-		
-	}
 }
 	
 

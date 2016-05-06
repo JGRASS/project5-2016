@@ -96,7 +96,7 @@ public class DodajSeriju extends JFrame {
 			button = new JButton("Dodaj");
 			button.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-					bioskop.gui.GUIKontroler.unesiSeriju(textFieldS.getText(),
+					GUIKontroler.unesiSeriju(textFieldS.getText(),
 							Integer.parseInt(textField_1S.getText()), Double.parseDouble(trajanjeS.getText()));
 					
 				}
