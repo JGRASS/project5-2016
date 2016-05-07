@@ -98,6 +98,7 @@ public class DodajSeriju extends JFrame {
 				public void actionPerformed(ActionEvent e) {
 					bioskop.gui.GUIKontroler.unesiSeriju(textFieldS.getText(),
 							Integer.parseInt(textField_1S.getText()), Double.parseDouble(trajanjeS.getText()));
+					dispose();
 					
 				}
 			});
