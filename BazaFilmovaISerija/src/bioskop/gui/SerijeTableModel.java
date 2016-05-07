@@ -47,7 +47,7 @@ public class SerijeTableModel extends AbstractTableModel{
 		return kolone[column];
 	}
 	
-	public void uciitajSerije(LinkedList<Serija> listaSerija){
+	public void ucitajSerije(LinkedList<Serija> listaSerija){
 		this.listaSerija = listaSerija;
 		fireTableDataChanged();
 	}

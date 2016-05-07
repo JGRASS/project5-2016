@@ -138,12 +138,6 @@ public class BioskopGUI extends JFrame {
 		
 	}
 	
-	
-	public static void osveziTabeluFilmova(){
-		FilmTableModel model = (FilmTableModel) table.getModel();
-		model.ucitajFilmove(GUIKontroler.vratiSveFilmove());
-	}
-	
 	private JLabel getLblIdKorisnika() {
 		if (lblIdKorisnika == null) {
 			lblIdKorisnika = new JLabel("ID korisnika:");
@@ -171,5 +165,10 @@ public class BioskopGUI extends JFrame {
 			btnDodajKorisnika.setBounds(50, 65, 130, 23);
 		}
 		return btnDodajKorisnika;
+	}
+	
+	public static void osveziTabeluFilmova(){
+		FilmTableModel model = (FilmTableModel) table.getModel();
+		model.ucitajFilmove(GUIKontroler.vratiSveFilmove());
 	}
 }

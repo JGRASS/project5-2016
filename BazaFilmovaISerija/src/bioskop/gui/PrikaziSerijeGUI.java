@@ -34,12 +34,9 @@ public class PrikaziSerijeGUI extends JFrame{
 		}
 		return table;
 	}
-	
-	public static LinkedList<Serija> vratiSveSerije() {
-		return projekcije.Metode.vratiListuSerija();
-	}
+		
 	public static void osveziTabeluSerija(){
 		SerijeTableModel model = (SerijeTableModel) table.getModel();
-		model.uciitajSerije(vratiSveSerije());
+		model.ucitajSerije(GUIKontroler.vratiSveSerije());
 	}
 }

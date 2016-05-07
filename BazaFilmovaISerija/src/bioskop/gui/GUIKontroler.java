@@ -44,6 +44,11 @@ public class GUIKontroler {
 		prozor1.setVisible(true);
 		prozor1.setLocationRelativeTo(null);
 	}
+	public static void prikaziListuSerija() {
+		PrikaziSerijeGUI prozor = new PrikaziSerijeGUI();
+		prozor.setVisible(true);
+		prozor.setLocationRelativeTo(null);
+	}
 	
 	public static void unesiFilm(String ime, String zanr, int ocena,  double trajanje){
 		Film f = new Film();
@@ -56,12 +61,7 @@ public class GUIKontroler {
 		metoda.napuniListuFilmova(f);
 		BioskopGUI.osveziTabeluFilmova();
 		
-	}
-	
-
-	public static List<Film> vratiSveFilmove() {
-		return projekcije.Metode.vratiListuFilmova();
-	}
+	}	
 			
 	public static void unesiSeriju(String ime, int ocena, double trajanje){
 		Serija s = new Serija();
@@ -74,21 +74,23 @@ public class GUIKontroler {
 		PrikaziSerijeGUI.osveziTabeluSerija();
 		
 	}
-	public static void prikaziListuSerija() {
-		PrikaziSerijeGUI prozor = new PrikaziSerijeGUI();
-		prozor.setVisible(true);
-		prozor.setLocationRelativeTo(null);
-	}
-
-
+	
 	public static void unesiKorisnika(String ime, int ID){
 		Korisnik k = new Korisnik();
 		
 		k.setImeIPrezime(ime);
 		k.setID(ID);
 		
-		projekcije.Metode.napuniListuKorisnika(k);
-		}
+		metoda.napuniListuKorisnika(k);
+	}
+	
+	public static List<Film> vratiSveFilmove() {
+		return metoda.vratiListuFilmova();
+	}
+	
+	public static LinkedList<Serija> vratiSveSerije() {
+		return metoda.vratiListuSerija();
+	}
 
 }
 	
