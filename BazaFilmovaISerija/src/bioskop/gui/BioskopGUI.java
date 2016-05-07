@@ -25,6 +25,7 @@ import java.io.FileOutputStream;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.JTable;
+import javax.swing.JComboBox;
 
 public class BioskopGUI extends JFrame {
 
@@ -36,7 +37,6 @@ public class BioskopGUI extends JFrame {
 	private JLabel lblIdKorisnika;
 	private JTextField textField;
 	private JButton btnDodajKorisnika;
-
 
 	/**
 	 * Launch the application.
@@ -91,6 +91,7 @@ public class BioskopGUI extends JFrame {
 		});
 		btnSacuvaj.setPreferredSize(new Dimension(120, 25));
 		panel.add(btnSacuvaj);
+
 		
 		JLabel lblDodajSeriju = new JLabel("Dodaj seriju");
 		lblDodajSeriju.setPreferredSize(new Dimension(90, 25));
@@ -172,4 +173,6 @@ public class BioskopGUI extends JFrame {
 		FilmTableModel model = (FilmTableModel) table.getModel();
 		model.ucitajFilmove(GUIKontroler.vratiSveFilmove());
 	}
+
+
 }

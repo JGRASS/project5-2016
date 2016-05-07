@@ -25,13 +25,16 @@ import projekcije.serije.Serija;
 public class GUIKontroler {
 	public static BioskopGUI frame;
 	public static Metode metoda;
+	public static PrikaziSerijeGUI prozor;
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					metoda = new Metode();
 					frame = new BioskopGUI();
+					prozor = new PrikaziSerijeGUI();
 					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -77,7 +80,7 @@ public class GUIKontroler {
 		s.setTrajanjeSerije(trajanje);
 		
 		metoda.napuniListuSerija(s);
-		PrikaziSerijeGUI.osveziTabeluSerija();
+		prozor.osveziTabeluSerija();
 		
 	}
 	
