@@ -91,6 +91,10 @@ public class Metode {
 		korisnici.add(k);
 		
 	}
+	
+	public static LinkedList<Korisnik> vratiListuKorisnika(){
+		return korisnici;
+	}
 
 	public static LinkedList<Serija> vratiListuSerija() {
 		

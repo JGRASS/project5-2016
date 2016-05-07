@@ -37,6 +37,7 @@ public class BioskopGUI extends JFrame {
 	private JLabel lblIdKorisnika;
 	private JTextField textField;
 	private JButton btnDodajKorisnika;
+	private JButton btnPrikaziKorisnika;
 
 	/**
 	 * Launch the application.
@@ -137,6 +138,7 @@ public class BioskopGUI extends JFrame {
 		panel_1.add(getLblIdKorisnika());
 		panel_1.add(getTextField());
 		panel_1.add(getBtnDodajKorisnika());
+		panel_1.add(getBtnPrikaziKorisnika());
 		
 	}
 	
@@ -175,6 +177,16 @@ public class BioskopGUI extends JFrame {
 		FilmTableModel model = (FilmTableModel) table.getModel();
 		model.ucitajFilmove(GUIKontroler.vratiSveFilmove());
 	}
-
-
+	private JButton getBtnPrikaziKorisnika() {
+		if (btnPrikaziKorisnika == null) {
+			btnPrikaziKorisnika = new JButton("Prikazi korisnika");
+			btnPrikaziKorisnika.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					GUIKontroler.prikaziKorisnike();
+				}
+			});
+			btnPrikaziKorisnika.setBounds(228, 65, 156, 23);
+		}
+		return btnPrikaziKorisnika;
+	}
 }

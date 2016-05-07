@@ -26,6 +26,7 @@ public class GUIKontroler {
 	public static BioskopGUI frame;
 	public static Metode metoda;
 	public static PrikaziSerijeGUI prozor;
+	public static DodajKorisnikaGUI noviProzor;
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -33,6 +34,7 @@ public class GUIKontroler {
 					metoda = new Metode();
 					frame = new BioskopGUI();
 					prozor = new PrikaziSerijeGUI();
+					noviProzor = new DodajKorisnikaGUI();
 					frame.setVisible(true);
 					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
@@ -91,6 +93,8 @@ public class GUIKontroler {
 		k.setID(ID);
 		
 		metoda.napuniListuKorisnika(k);
+		noviProzor.osveziTabeluKorisnika();
+		
 	}
 	
 	public static List<Film> vratiSveFilmove() {
@@ -123,6 +127,18 @@ public class GUIKontroler {
 					JOptionPane.PLAIN_MESSAGE);
 		}
 		
+	}
+
+
+	public static List<Korisnik> vratiSveKorinike() {
+		return metoda.vratiListuKorisnika();
+	}
+
+
+	public static void prikaziKorisnike() {
+		DodajKorisnikaGUI prozor = new DodajKorisnikaGUI();
+		prozor.setVisible(true);
+		prozor.setLocationRelativeTo(null);
 	}
 
 
