@@ -46,6 +46,7 @@ public class BioskopGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public BioskopGUI() {
+		setMinimumSize(new Dimension(900, 700));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 634, 434);
 		contentPane = new JPanel();
@@ -77,19 +78,19 @@ public class BioskopGUI extends JFrame {
 		btnDodajFilm.setPreferredSize(new Dimension(120, 25));
 		panel.add(btnDodajFilm);
 		
-		JLabel lblPrikaziFilmove = new JLabel("Prikazi filmove");
-		lblPrikaziFilmove.setPreferredSize(new Dimension(90, 25));
-		panel.add(lblPrikaziFilmove);
+		JLabel lblZapamtiListuFilmova = new JLabel("Sacuvaj listu filmova");
+		lblZapamtiListuFilmova.setMinimumSize(new Dimension(100, 14));
+		lblZapamtiListuFilmova.setPreferredSize(new Dimension(110, 25));
+		panel.add(lblZapamtiListuFilmova);
 		
-		JButton btnPrikaziFilmove = new JButton("Prikazi filmove");
-		btnPrikaziFilmove.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-				
+		JButton btnSacuvaj = new JButton("Sacuvaj");
+		btnSacuvaj.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				GUIKontroler.izvrsiSerijalizaciju();
 			}
 		});
-		btnPrikaziFilmove.setPreferredSize(new Dimension(120, 25));
-		panel.add(btnPrikaziFilmove);
+		btnSacuvaj.setPreferredSize(new Dimension(120, 25));
+		panel.add(btnSacuvaj);
 		
 		JLabel lblDodajSeriju = new JLabel("Dodaj seriju");
 		lblDodajSeriju.setPreferredSize(new Dimension(90, 25));

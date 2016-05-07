@@ -21,8 +21,7 @@ public class Serija {
 		return ocenaSerije;
 	}
 	public void setOcenaSerije(int ocenaSerije) {
-		if(ocenaSerije>5 || ocenaSerije<0)
-			throw new RuntimeException("Greska!");
+		
 		this.ocenaSerije = ocenaSerije;
 	}
 	public double getTrajanjeSerije() {

@@ -1,7 +1,7 @@
 package projekcije.filmovi;
 import korisnici.Korisnik;
 
-
+import java.io.Serializable;
 import java.util.GregorianCalendar;
 import java.util.LinkedList;
 import termin.Termin;
@@ -10,7 +10,7 @@ import termin.Termin;
  * @author Olivera, Ana i Jana
  *
  */
-public class Film {
+public class Film implements Serializable{
 	/**
 	 * Lista termina u kojima se prikazuje dati film.
 	 */

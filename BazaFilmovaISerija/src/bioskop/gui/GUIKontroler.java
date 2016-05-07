@@ -4,12 +4,18 @@ import java.awt.EventQueue;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale.FilteringMode;
+
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 import korisnici.Korisnik;
 import projekcije.Metode;
@@ -91,7 +97,33 @@ public class GUIKontroler {
 	public static LinkedList<Serija> vratiSveSerije() {
 		return metoda.vratiListuSerija();
 	}
+	
+	public static void izvrsiSerijalizaciju() {
+		
+		JFileChooser save = new JFileChooser();
+		int vrednost = save.showSaveDialog(frame.getContentPane());
+		if (vrednost == JFileChooser.APPROVE_OPTION) {
+			
+			
+			File file = new File(save.getSelectedFile().getAbsolutePath() + System.getProperty("file.separator"));
 
+			try(ObjectOutputStream out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(file)))){
+				out.writeObject(vratiSveFilmove());
+				out.close();
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+			JOptionPane.showMessageDialog(frame.getContentPane(), "Fajl je sacuvan :)", "Poruka",
+					JOptionPane.PLAIN_MESSAGE);
+		}
+		
+	}
+
+
+	
 }
 	
 
