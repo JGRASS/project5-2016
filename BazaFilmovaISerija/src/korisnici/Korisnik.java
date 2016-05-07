@@ -14,8 +14,7 @@ public class Korisnik implements InterfejsKorisnik{
 		private int ID;
 		private LinkedList<Film> odgledaniFilmovi = new LinkedList<Film>();
 		private LinkedList<Serija> ogledaneSerije = new LinkedList<Serija>();
-		private LinkedList<Film> filmoviZaGledanje = new LinkedList<Film>();
-		private LinkedList<Serija> serijeZaGledanje = new LinkedList<Serija>();
+		
 		
 		public String getImeIPrezime() {
 			return imeIPrezime;
@@ -47,18 +46,7 @@ public class Korisnik implements InterfejsKorisnik{
 		public void setOgledaneSerije(LinkedList<Serija> ogledaneSerije) {
 			this.ogledaneSerije = ogledaneSerije;
 		}
-		public LinkedList<Film> getFilmoviZaGledanje() {
-			return filmoviZaGledanje;
-		}
-		public void setFilmoviZaGledanje(LinkedList<Film> filmoviZaGledanje) {
-			this.filmoviZaGledanje = filmoviZaGledanje;
-		}
-		public LinkedList<Serija> getSerijeZaGledanje() {
-			return serijeZaGledanje;
-		}
-		public void setSerijeZaGledanje(LinkedList<Serija> serijeZaGledanje) {
-			this.serijeZaGledanje = serijeZaGledanje;
-		}
+		
 		@Override
 		public String toString() {
 			return "Korisnik [Ime i prezime= " + imeIPrezime + ", ID= " + ID + "]";

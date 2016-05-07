@@ -24,9 +24,10 @@ public class DodajFilm extends JFrame {
 	private static JTextField txtZanr;
 	private static JTextField txtTrajanje;
 	public DodajFilm() {
+		setMinimumSize(new Dimension(700, 400));
 		setTitle("Dodaj novi film ");
 		getContentPane().setMaximumSize(new Dimension(100, 150));
-		setPreferredSize(new Dimension(120, 10));
+		setPreferredSize(new Dimension(150, 150));
 		getContentPane().setSize(new Dimension(120, 100));
 		getContentPane().setPreferredSize(new Dimension(10, 10));
 		getContentPane().setLayout(null);
@@ -68,6 +69,7 @@ public class DodajFilm extends JFrame {
 		txtTrajanje.setColumns(10);
 		
 		JButton btnDodaj = new JButton("Dodaj");
+		btnDodaj.setMinimumSize(new Dimension(400, 500));
 		btnDodaj.setBounds(121, 193, 113, 23);
 		btnDodaj.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -82,6 +84,7 @@ public class DodajFilm extends JFrame {
 		JButton btnOdustani = new JButton("Odustani");
 		btnOdustani.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				dispose();
 			}
 		});
 		btnOdustani.setBounds(271, 193, 130, 23);

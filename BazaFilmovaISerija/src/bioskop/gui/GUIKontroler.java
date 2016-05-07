@@ -7,19 +7,26 @@ import java.io.DataOutputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale.FilteringMode;
+
+import korisnici.Korisnik;
+import projekcije.Metode;
 import projekcije.filmovi.Film;
 import projekcije.serije.Serija;
 
 public class GUIKontroler {
-	
+	public static BioskopGUI frame;
+	public static Metode metoda;
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					BioskopGUI frame = new BioskopGUI();
+					metoda = new Metode();
+					frame = new BioskopGUI();
 					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -38,6 +45,12 @@ public class GUIKontroler {
 		prozor1.setVisible(true);
 		prozor1.setLocationRelativeTo(null);
 	}
+	public static void prikaziListuSerija() {
+		PrikaziSerijeGUI prozor = new PrikaziSerijeGUI();
+		prozor.setVisible(true);
+		prozor.setLocationRelativeTo(null);
+	}
+	
 	public static void unesiFilm(String ime, String zanr, int ocena,  double trajanje){
 		Film f = new Film();
 		
@@ -46,10 +59,11 @@ public class GUIKontroler {
 		f.setOcena(ocena);
 		f.setTrajanje(trajanje);
 		
-		projekcije.Metode.napuniListuFilmova(f);
-		BioskopGUI.osveziTabelu();
+		metoda.napuniListuFilmova(f);
+		BioskopGUI.osveziTabeluFilmova();
 		
-	}
+	}	
+			
 	public static void unesiSeriju(String ime, int ocena, double trajanje){
 		Serija s = new Serija();
 		
@@ -57,12 +71,28 @@ public class GUIKontroler {
 		s.setOcenaSerije(ocena);
 		s.setTrajanjeSerije(trajanje);
 		
-		projekcije.Metode.napuniListuSerija(s);
+		metoda.napuniListuSerija(s);
+		PrikaziSerijeGUI.osveziTabeluSerija();
 		
 	}
-
-
-	public static List<Film> vratiSveFilmove() {
-		return projekcije.Metode.vratiListuFilmova();
+	
+	public static void unesiKorisnika(String ime, int ID){
+		Korisnik k = new Korisnik();
+		
+		k.setImeIPrezime(ime);
+		k.setID(ID);
+		
+		metoda.napuniListuKorisnika(k);
 	}
+	
+	public static List<Film> vratiSveFilmove() {
+		return metoda.vratiListuFilmova();
+	}
+	
+	public static LinkedList<Serija> vratiSveSerije() {
+		return metoda.vratiListuSerija();
+	}
+
 }
+	
+
