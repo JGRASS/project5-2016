@@ -168,7 +168,9 @@ public class BioskopGUI extends JFrame {
 		}
 		return btnDodajKorisnika;
 	}
-	
+	/**
+	 *  Metoda koja osvezava tabelicu filmova.
+	 */
 	public static void osveziTabeluFilmova(){
 		FilmTableModel model = (FilmTableModel) table.getModel();
 		model.ucitajFilmove(GUIKontroler.vratiSveFilmove());
