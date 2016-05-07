@@ -80,7 +80,7 @@ public class BioskopGUI extends JFrame {
 		
 		JLabel lblZapamtiListuFilmova = new JLabel("Sacuvaj listu filmova");
 		lblZapamtiListuFilmova.setMinimumSize(new Dimension(100, 14));
-		lblZapamtiListuFilmova.setPreferredSize(new Dimension(110, 25));
+		lblZapamtiListuFilmova.setPreferredSize(new Dimension(120, 25));
 		panel.add(lblZapamtiListuFilmova);
 		
 		JButton btnSacuvaj = new JButton("Sacuvaj");
@@ -93,7 +93,7 @@ public class BioskopGUI extends JFrame {
 		panel.add(btnSacuvaj);
 		
 		JLabel lblOtvoriListuFilmova = new JLabel("Otvori listu filmova\r\n");
-		lblOtvoriListuFilmova.setPreferredSize(new Dimension(90, 25));
+		lblOtvoriListuFilmova.setPreferredSize(new Dimension(120, 25));
 		panel.add(lblOtvoriListuFilmova);
 		
 		JButton btnOtvori = new JButton("Otvori\r\n");
