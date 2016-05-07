@@ -25,6 +25,7 @@ import java.io.FileOutputStream;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.JTable;
+import javax.swing.JComboBox;
 
 public class BioskopGUI extends JFrame {
 
@@ -33,6 +34,7 @@ public class BioskopGUI extends JFrame {
 	private Serija s = new Serija();
 	private JTextField txtImeKorisnika;
 	private static JTable table;
+	private JComboBox comboFilm;
 
 
 	/**
@@ -77,16 +79,7 @@ public class BioskopGUI extends JFrame {
 		JLabel lblPrikaziFilmove = new JLabel("Prikazi filmove");
 		lblPrikaziFilmove.setPreferredSize(new Dimension(90, 25));
 		panel.add(lblPrikaziFilmove);
-		
-		JButton btnPrikaziFilmove = new JButton("Prikazi filmove");
-		btnPrikaziFilmove.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-				
-			}
-		});
-		btnPrikaziFilmove.setPreferredSize(new Dimension(120, 25));
-		panel.add(btnPrikaziFilmove);
+		panel.add(getComboFilm());
 		
 		JLabel lblDodajSeriju = new JLabel("Dodaj seriju");
 		lblDodajSeriju.setPreferredSize(new Dimension(90, 25));
@@ -138,5 +131,11 @@ public class BioskopGUI extends JFrame {
 		FilmTableModel model = (FilmTableModel) table.getModel();
 		model.ucitajFilmove(GUIKontroler.vratiSveFilmove());
 	}
-	
+	private JComboBox getComboFilm() {
+		if (comboFilm == null) {
+			comboFilm = new JComboBox();
+			comboFilm.addItem("");
+		}
+		return comboFilm;
+	}
 }
