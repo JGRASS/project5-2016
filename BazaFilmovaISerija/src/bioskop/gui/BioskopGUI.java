@@ -26,6 +26,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.JTable;
 import javax.swing.JComboBox;
+import java.awt.Toolkit;
 
 public class BioskopGUI extends JFrame {
 
@@ -46,6 +47,8 @@ public class BioskopGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public BioskopGUI() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(BioskopGUI.class.getResource("/com/sun/javafx/scene/control/skin/modena/HTMLEditor-Bold.png")));
+		setTitle("Baza bioskopa");
 		setMinimumSize(new Dimension(900, 700));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 634, 434);
