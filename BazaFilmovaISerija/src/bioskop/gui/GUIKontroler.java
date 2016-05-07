@@ -1,14 +1,18 @@
 package bioskop.gui;
 
 import java.awt.EventQueue;
+import java.awt.HeadlessException;
+import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.LinkedList;
 import java.util.List;
@@ -128,7 +132,14 @@ public class GUIKontroler {
 		}
 		
 	}
-
+	public static void izvrsiDeserijalizaciju(){
+		
+		JFileChooser fc = new JFileChooser();
+		int value = fc.showOpenDialog(frame);
+		JOptionPane.showMessageDialog(frame.getContentPane(), "Fajl je uspeno otvoren.", "Poruka",
+					JOptionPane.PLAIN_MESSAGE);
+			
+		}
 
 	public static List<Korisnik> vratiSveKorinike() {
 		return metoda.vratiListuKorisnika();
@@ -144,5 +155,7 @@ public class GUIKontroler {
 
 	
 }
+	
+
 	
 
