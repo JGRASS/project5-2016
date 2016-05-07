@@ -91,6 +91,19 @@ public class BioskopGUI extends JFrame {
 		});
 		btnSacuvaj.setPreferredSize(new Dimension(120, 25));
 		panel.add(btnSacuvaj);
+		
+		JLabel lblOtvoriListuFilmova = new JLabel("Otvori listu filmova\r\n");
+		lblOtvoriListuFilmova.setPreferredSize(new Dimension(90, 25));
+		panel.add(lblOtvoriListuFilmova);
+		
+		JButton btnOtvori = new JButton("Otvori\r\n");
+		btnOtvori.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				GUIKontroler.izvrsiDeserijalizaciju();
+			}
+		});
+		btnOtvori.setPreferredSize(new Dimension(120, 25));
+		panel.add(btnOtvori);
 
 		
 		JLabel lblDodajSeriju = new JLabel("Dodaj seriju");
@@ -119,6 +132,34 @@ public class BioskopGUI extends JFrame {
 		
 		btnPrikaziSerije.setPreferredSize(new Dimension(120, 25));
 		panel.add(btnPrikaziSerije);
+		
+		JLabel lblSacuvajListuSerija = new JLabel("Sacuvaj listu serija\r\n");
+		lblSacuvajListuSerija.setPreferredSize(new Dimension(110, 25));
+		lblSacuvajListuSerija.setMinimumSize(new Dimension(100, 14));
+		panel.add(lblSacuvajListuSerija);
+		
+		JButton button = new JButton("Sacuvaj");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				GUIKontroler.izvrsiSerijalizaciju();
+			}
+		});
+		button.setPreferredSize(new Dimension(120, 25));
+		panel.add(button);
+		
+		JLabel lblOtvoriListuSerija = new JLabel("Otvori listu serija\r\n");
+		lblOtvoriListuSerija.setPreferredSize(new Dimension(110, 25));
+		lblOtvoriListuSerija.setMinimumSize(new Dimension(100, 14));
+		panel.add(lblOtvoriListuSerija);
+		
+		JButton button_1 = new JButton("Otvori\r\n");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				GUIKontroler.izvrsiDeserijalizaciju();
+			}
+		});
+		button_1.setPreferredSize(new Dimension(120, 25));
+		panel.add(button_1);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setPreferredSize(new Dimension(150, 120));
