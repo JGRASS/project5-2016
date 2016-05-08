@@ -1,7 +1,4 @@
 package projekcije;
-import bioskop.Bioskop;
-import termin.Termin;
-
 
 import projekcije.filmovi.Film;
 import projekcije.serije.Serija;
@@ -25,16 +22,7 @@ public class Metode {
 	}
 	
 	
-	public int vratiBrojGledalacaFilmaUTerminu(Termin t, String naziv){
-		int i = 0;
-		int brojac = 0;
-		while(i<filmovi.size()){
-			if(filmovi.get(i).getIme().equals(naziv) && filmovi.get(i).getTermini().contains(t.getTermin()))
-				brojac++;
-			i++;
-		}
-		return brojac;
-	}
+	
 	public int vratiUkupanBrojGledalacaFilma(String naziv){
 		int i=0;
 		int brojac=0;
