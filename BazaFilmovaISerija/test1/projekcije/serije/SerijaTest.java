@@ -32,17 +32,15 @@ public class SerijaTest {
 		assertEquals(ocena, s.getOcenaSerije());
 	}
 	@Test
-	public void testGetIme(){
-		s.setImeSerije("Ocajne domacice");
+	public void testGetImeSerije(){
+		s.setImeSerije("Suits");
 		String ime = s.getImeSerije();
-		assertEquals(ime, "Ocajne domacice");
-	} 
+		assertEquals(ime, "Suits");
+	}
 	@Test
 	public void testGetOcena(){
-		s.setOcena(5);
-		int ocena = s.getOcena();
+		s.setOcenaSerije(5);
+		int ocena = s.getOcenaSerije();
 		assertEquals(ocena, 5);
 	}
-
 }
-
