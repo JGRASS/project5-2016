@@ -13,6 +13,8 @@ import java.awt.Dimension;
 import java.util.LinkedList;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.awt.event.ActionEvent;
 
 public class PrikaziSerijeGUI extends JFrame{
@@ -21,6 +23,13 @@ public class PrikaziSerijeGUI extends JFrame{
 	private JPanel panel;
 	private JButton btnIzbrisi;
 	public PrikaziSerijeGUI() {
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				dispose();
+			}
+
+		});
 		setMinimumSize(new Dimension(400, 500));
 		setTitle("Lista serija");
 		getContentPane().add(getScrollPane(), BorderLayout.CENTER);

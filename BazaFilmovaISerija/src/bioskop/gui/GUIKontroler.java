@@ -174,6 +174,23 @@ public class GUIKontroler {
 		metoda.obrisiKorisnika(k);
 		noviProzor.osveziTabeluKorisnika();
 	}
+	
+	public static void izadji() {
+		int povratnaVrednost = JOptionPane.showConfirmDialog(frame.getContentPane(),
+				"Da li zelite da izadjete iz programa?", "Izlazak", JOptionPane.YES_NO_CANCEL_OPTION);
+
+		if (povratnaVrednost == JOptionPane.YES_OPTION) {
+			System.exit(0);
+		}
+		
+	}
+	
+	public static void prikaziPodatke() {
+		JOptionPane jop = new JOptionPane();
+		jop.showMessageDialog(frame, "Olivera Kordic \n Ana Jacimovic \n Jana Djurovic \n FON 2016", "Informacije", 1);
+		
+	}
+
 }
 	
 

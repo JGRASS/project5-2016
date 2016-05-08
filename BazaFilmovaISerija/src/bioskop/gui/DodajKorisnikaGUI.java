@@ -14,6 +14,8 @@ import korisnici.Korisnik;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.awt.event.ActionEvent;
 
 public class DodajKorisnikaGUI extends JFrame{
@@ -22,6 +24,13 @@ public class DodajKorisnikaGUI extends JFrame{
 	private JPanel panel;
 	private JButton btnIzbrisi;
 	public DodajKorisnikaGUI() {
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				dispose();
+			}
+
+		});
 		setMinimumSize(new Dimension(400, 500));
 		setTitle("Lista korisnika");
 		getContentPane().setLayout(new BorderLayout(0, 0));
