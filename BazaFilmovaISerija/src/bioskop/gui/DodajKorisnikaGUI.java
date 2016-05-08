@@ -18,6 +18,11 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.ActionEvent;
 
+/**
+ * Klasa koja sluzi kao prozor za dodavanje  novog korisnika u listu.
+ * @author Ana Jacimovic, Jana Djurovic i Olivera Kordic.
+ *
+ */
 public class DodajKorisnikaGUI extends JFrame{
 	private JScrollPane scrollPane;
 	private static JTable tableKorisnik;
@@ -54,7 +59,9 @@ public class DodajKorisnikaGUI extends JFrame{
 		}
 		return tableKorisnik;
 	}
-	
+	/**
+	 * Metoda osvezava tabelicu korisnika.
+	 */
 	public static void osveziTabeluKorisnika(){
 		KorisnikTableModel model = (KorisnikTableModel) tableKorisnik.getModel();
 		model.ucitajKorisnika(GUIKontroler.vratiSveKorinike());

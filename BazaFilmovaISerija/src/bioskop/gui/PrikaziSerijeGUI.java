@@ -11,12 +11,18 @@ import projekcije.serije.Serija;
 
 import java.awt.Dimension;
 import java.util.LinkedList;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.ActionEvent;
 
+/**
+ * Klasa koja sluzi kao prozor za prikaz tabele sa listom dodatih serija.
+ * @author Ana Jacimovic, Jana Djurovic i Olivera Kordic
+ *
+ */
 public class PrikaziSerijeGUI extends JFrame{
 	private JScrollPane scrollPane;
 	private static JTable table;
@@ -50,7 +56,9 @@ public class PrikaziSerijeGUI extends JFrame{
 		}
 		return table;
 	}
-		
+	/**
+	 * Funkcija kojom se osvezava tabela serija.	
+	 */
 	public static void osveziTabeluSerija(){
 		SerijeTableModel model = (SerijeTableModel) table.getModel();
 		model.ucitajSerije(GUIKontroler.vratiSveSerije());

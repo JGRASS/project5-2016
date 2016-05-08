@@ -28,6 +28,8 @@ import javax.swing.JTextField;
 import javax.swing.JTable;
 import javax.swing.JComboBox;
 import java.awt.Toolkit;
+
+
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -37,7 +39,11 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.InputEvent;
 import javax.swing.ImageIcon;
-
+/**
+ * Klasa koja sluzi kao glavni prozor pomocu koga se kordinira ostalim funkcijama.
+ * @author Ana Jacimovic, Jana Djurovic i Olivera Kordic
+ *
+ */
 public class BioskopGUI extends JFrame {
 
 	private JPanel contentPane;
@@ -177,7 +183,9 @@ public class BioskopGUI extends JFrame {
 		JLabel lblDodajSeriju = new JLabel("Dodaj seriju");
 		lblDodajSeriju.setPreferredSize(new Dimension(90, 25));
 		panel.add(lblDodajSeriju);
-		
+		/**
+		 * Na dugme Dodaj dodat je ActionEvent kojim se implementira funkcija dodavanja serije u listu preko GUIKontrolera.
+		 */
 		JButton btnDodajSeriju = new JButton("Dodaj seriju");
 		btnDodajSeriju.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -190,7 +198,9 @@ public class BioskopGUI extends JFrame {
 		JLabel lblPrikaziSerije = new JLabel("Prikazi serije");
 		lblPrikaziSerije.setPreferredSize(new Dimension(90, 25));
 		panel.add(lblPrikaziSerije);
-		
+		/**
+		 * Na dugme Prikazu je dodat ActionEvent kojim se implementira funkcija prikaza podataka preko GUIKontrolera.
+		 */
 		JButton btnPrikaziSerije = new JButton("Prikazi serije");
 		btnPrikaziSerije.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -205,7 +215,9 @@ public class BioskopGUI extends JFrame {
 		lblSacuvajListuSerija.setPreferredSize(new Dimension(110, 25));
 		lblSacuvajListuSerija.setMinimumSize(new Dimension(100, 14));
 		panel.add(lblSacuvajListuSerija);
-		
+		/**
+		 * Na dugme Sacuvaj je dodat ActionEvent kojim se implementira funkcija cuvanja podataka preko GUIKontrolera.
+		 */
 		JButton button = new JButton("Sacuvaj");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -219,7 +231,9 @@ public class BioskopGUI extends JFrame {
 		lblOtvoriListuSerija.setPreferredSize(new Dimension(110, 25));
 		lblOtvoriListuSerija.setMinimumSize(new Dimension(100, 14));
 		panel.add(lblOtvoriListuSerija);
-		
+		/**
+		 * Na dugme Otvori je dodat ActionEvent kojim se implementira funkcija otvaranja podataka preko GUIKontrolera.
+		 */
 		JButton button_1 = new JButton("Otvori\r\n");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

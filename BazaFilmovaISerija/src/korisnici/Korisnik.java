@@ -7,10 +7,19 @@ import korisnici.interfejs.InterfejsKorisnik;
 import projekcije.filmovi.Film;
 import projekcije.filmovi.zanr.Zanr;
 import projekcije.serije.Serija;
-
+/**
+ * Klasa korisnik.
+ * @author Ana Jacimovic, Jana Djurovic i Olivera Kordic
+ *
+ */
 public class Korisnik implements InterfejsKorisnik{
-		
+		/**
+		 * Atribut koji predstavlja ime i prezime korisnika.
+		 */
 		private String imeIPrezime;
+		/**
+		 * Atribut koji predstavlja id korisnika.
+		 */
 		private int ID;
 		private LinkedList<Film> odgledaniFilmovi = new LinkedList<Film>();
 		private LinkedList<Serija> ogledaneSerije = new LinkedList<Serija>();
