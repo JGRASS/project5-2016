@@ -8,6 +8,13 @@ import java.util.GregorianCalendar;
 import java.util.LinkedList;
 import java.util.List;
 
+import bioskop.sistemskeoperacije.SONapuniListuFilmova;
+import bioskop.sistemskeoperacije.SONapuniListuKorisnika;
+import bioskop.sistemskeoperacije.SONapuniListuSerija;
+import bioskop.sistemskeoperacije.SOObrisiKorisnika;
+import bioskop.sistemskeoperacije.SOObrisiListuFIlmova;
+import bioskop.sistemskeoperacije.SOObrisiSeriju;
+
 public class Metode {
 	public static LinkedList<Film> filmovi = new LinkedList<Film>();
 	public static LinkedList<Serija> serije = new LinkedList<Serija>();
@@ -18,7 +25,7 @@ public class Metode {
 	}
 	
 	public static void napuniListuFilmova(Film f){
-		filmovi.add(f);
+		SONapuniListuFilmova.izvrsi(f, filmovi);
 	}
 	
 	
@@ -70,13 +77,13 @@ public class Metode {
 	}
 
 	public static void napuniListuSerija(Serija s) {
-		serije.add(s);
+		SONapuniListuSerija.izvrsi(s, serije);
 		
 	}
 	
 
 	public static void napuniListuKorisnika(Korisnik k) {
-		korisnici.add(k);
+		SONapuniListuKorisnika.izvrsi(k, korisnici);
 		
 	}
 	
@@ -90,16 +97,16 @@ public class Metode {
 	}
 	
 	public static void obrisiFilm(Film f){
-		filmovi.remove(f);
+		SOObrisiListuFIlmova.izvrsi(f, filmovi);
 	}
 
 	public void obrisiSeriju(Serija s) {
-		serije.remove(s);
+		SOObrisiSeriju.izvrsi(s, serije);
 		
 	}
 
 	public void obrisiKorisnika(Korisnik k) {
-		korisnici.remove();
+		SOObrisiKorisnika.izvrsi(k, korisnici);
 		
 	}
 }
