@@ -10,7 +10,11 @@ import projekcije.serije.Serija;
 
 import java.awt.Dimension;
 import java.util.LinkedList;
-
+/**
+ * Klasa koja sluzi kao prozor za prikaz tabele sa listom dodatih serija.
+ * @author Ana Jacimovic, Jana Djurovic i Olivera Kordic
+ *
+ */
 public class PrikaziSerijeGUI extends JFrame{
 	private JScrollPane scrollPane;
 	private static JTable table;
@@ -34,7 +38,9 @@ public class PrikaziSerijeGUI extends JFrame{
 		}
 		return table;
 	}
-		
+	/**
+	 * Funkcija kojom se osvezava tabela serija.	
+	 */
 	public static void osveziTabeluSerija(){
 		SerijeTableModel model = (SerijeTableModel) table.getModel();
 		model.ucitajSerije(GUIKontroler.vratiSveSerije());

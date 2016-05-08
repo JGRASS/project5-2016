@@ -17,7 +17,11 @@ import java.lang.Character.UnicodeScript;
 import java.awt.event.ActionEvent;
 import org.eclipse.wb.swing.FocusTraversalOnArray;
 import java.awt.Component;
-
+/**
+ * Klasa koja sluzi kao prozor za dodavanje  novog filma u listu.
+ * @author Ana Jacimovic, Jana Djurovic i Olivera Kordic
+ *
+ */
 public class DodajFilm extends JFrame {
 	private static JTextField txtIme;
 	private static JTextField txtOcena;
@@ -67,7 +71,9 @@ public class DodajFilm extends JFrame {
 		txtTrajanje.setBounds(159, 146, 86, 20);
 		getContentPane().add(txtTrajanje);
 		txtTrajanje.setColumns(10);
-		
+		/**
+		 * Na dugme Dodaj dodat je ActionEvent kojim se implementira funkcija dodavanja filma u listu preko GUIKontrolera.
+		 */
 		JButton btnDodaj = new JButton("Dodaj");
 		btnDodaj.setMinimumSize(new Dimension(400, 500));
 		btnDodaj.setBounds(121, 193, 113, 23);

@@ -9,7 +9,11 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Dimension;
-
+/**
+ * Klasa koja sluzi kao prozor za dodavanje  nove serije u listu.
+ * @author Ana Jacimovic, Jana Djurovic i Olivera Kordic
+ *
+ */
 public class DodajSeriju extends JFrame {
 	private JPanel panel;
 	private JLabel lblImeSerije;
@@ -91,6 +95,9 @@ public class DodajSeriju extends JFrame {
 		}
 		return lblTrajanjeSerije;
 	}
+	/**
+	 * Na dugme Dodaj dodat je ActionEvent kojim se implementira funkcija dodavanja serije u listu preko GUIKontrolera.
+	 */
 	private JButton getButton() {
 		if (button == null) {
 			button = new JButton("Dodaj");
