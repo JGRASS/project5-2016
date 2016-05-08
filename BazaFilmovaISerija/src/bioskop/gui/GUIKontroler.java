@@ -136,9 +136,10 @@ public class GUIKontroler {
 		
 		JFileChooser fc = new JFileChooser();
 		int value = fc.showOpenDialog(frame);
+		if (value == JFileChooser.APPROVE_OPTION) {
 		JOptionPane.showMessageDialog(frame.getContentPane(), "Fajl je uspeno otvoren.", "Poruka",
 					JOptionPane.PLAIN_MESSAGE);
-			
+			}
 		}
 
 	public static List<Korisnik> vratiSveKorinike() {

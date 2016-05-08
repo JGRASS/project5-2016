@@ -4,17 +4,14 @@ import korisnici.Korisnik;
 import java.io.Serializable;
 import java.util.GregorianCalendar;
 import java.util.LinkedList;
-import termin.Termin;
+
 /**
  * Klasa Film.
  * @author Olivera, Ana i Jana
  *
  */
 public class Film implements Serializable{
-	/**
-	 * Lista termina u kojima se prikazuje dati film.
-	 */
-	private LinkedList<Termin> listaTermina;
+	
 	/**
 	 *Atribut koji predstavlja naziv filma.
 	 */
@@ -35,25 +32,7 @@ public class Film implements Serializable{
 	 * Atribut publika predstavlja listu gledalaca koji su ikad gledali dati film.
 	 */
 	private LinkedList <Korisnik> publika = new LinkedList<Korisnik>(); //oni koji su ikad gledali taj film
-	/**
-	 * Metoda koja predstavlja geter za atribut listaTermina
-	 * @return listaTermina
-	 */
-	public LinkedList <Termin>getTermini(){
-		return listaTermina;
-	}
-	/**
-	 * Metoda koja predstavlja seter za atribut listaTermina. Prima kao parametre tri termina (t1, t2 i t3). 
-	 * Pretpostavili smo da se svaki film prikazuje u tri termina.
-	 * @param t1
-	 * @param t2
-	 * @param t3
-	 */
-	public void setTermini(GregorianCalendar t1, GregorianCalendar t2, GregorianCalendar t3){ //pretostavimo da za svaki film postoje 3 termina
-		listaTermina.get(0).setTermin(t1);
-		listaTermina.get(1).setTermin(t2);
-		listaTermina.get(2).setTermin(t3);
-	}
+	
 	/**
 	 * Metoda koja predstavlja geter za ime.
 	 * @return imeFilma
@@ -136,7 +115,7 @@ public class Film implements Serializable{
 	@Override
 	public String toString() {
 		return "film [Ime= " + imeFilma + ","
-				+ "Ocena= " + ocenaFilma + ", Zanr= " + zanrFilma + "Vreme trajanja= " + trajanjeFilma+ " Termini=" +listaTermina.toString()+"]";
+				+ "Ocena= " + ocenaFilma + ", Zanr= " + zanrFilma + "Vreme trajanja= " + trajanjeFilma;
 	}
 	//sta radi ovo poslednje?
 	
