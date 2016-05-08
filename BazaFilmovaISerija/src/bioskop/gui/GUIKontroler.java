@@ -153,8 +153,44 @@ public class GUIKontroler {
 		prozor.setLocationRelativeTo(null);
 	}
 
+	public static void izbrisiFilm(Film f){
+		metoda.obrisiFilm(f);
+		frame.osveziTabeluFilmova();
+	}
+	public static void porukaGreskeBiranjeReda() {
+		JOptionPane.showMessageDialog(frame.getContentPane(), "Izaberite podatke za brisanje!", "Greska!!!",
+				JOptionPane.ERROR_MESSAGE);
+	}
 
+
+	public static void izbrisiSeriju(Serija s) {
+		metoda.obrisiSeriju(s);
+		prozor.osveziTabeluSerija();
+		
+	}
+
+
+	public static void izbrisiKorisnika(Korisnik k) {
+		metoda.obrisiKorisnika(k);
+		noviProzor.osveziTabeluKorisnika();
+	}
 	
+	public static void izadji() {
+		int povratnaVrednost = JOptionPane.showConfirmDialog(frame.getContentPane(),
+				"Da li zelite da izadjete iz programa?", "Izlazak", JOptionPane.YES_NO_CANCEL_OPTION);
+
+		if (povratnaVrednost == JOptionPane.YES_OPTION) {
+			System.exit(0);
+		}
+		
+	}
+	
+	public static void prikaziPodatke() {
+		JOptionPane jop = new JOptionPane();
+		jop.showMessageDialog(frame, "Olivera Kordic \n Ana Jacimovic \n Jana Djurovic \n FON 2016", "Informacije", 1);
+		
+	}
+
 }
 	
 
