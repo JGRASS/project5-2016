@@ -17,6 +17,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.Toolkit;
 
 /**
  * Klasa koja sluzi kao prozor za dodavanje  novog korisnika u listu.
@@ -29,6 +31,7 @@ public class DodajKorisnikaGUI extends JFrame{
 	private JPanel panel;
 	private JButton btnIzbrisi;
 	public DodajKorisnikaGUI() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DodajKorisnikaGUI.class.getResource("/javax/swing/plaf/metal/icons/ocean/menu.gif")));
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
@@ -69,6 +72,7 @@ public class DodajKorisnikaGUI extends JFrame{
 	private JPanel getPanel() {
 		if (panel == null) {
 			panel = new JPanel();
+			panel.setBackground(Color.LIGHT_GRAY);
 			panel.add(getBtnIzbrisi());
 		}
 		return panel;

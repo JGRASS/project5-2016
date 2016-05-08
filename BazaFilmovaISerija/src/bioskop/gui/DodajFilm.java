@@ -17,6 +17,8 @@ import java.lang.Character.UnicodeScript;
 import java.awt.event.ActionEvent;
 import org.eclipse.wb.swing.FocusTraversalOnArray;
 import java.awt.Component;
+import java.awt.Toolkit;
+import java.awt.Color;
 /**
  * Klasa koja sluzi kao prozor za dodavanje  novog filma u listu.
  * @author Ana Jacimovic, Jana Djurovic i Olivera Kordic
@@ -28,47 +30,50 @@ public class DodajFilm extends JFrame {
 	private static JTextField txtZanr;
 	private static JTextField txtTrajanje;
 	public DodajFilm() {
-		setMinimumSize(new Dimension(700, 400));
+		setBackground(Color.WHITE);
+		getContentPane().setBackground(Color.LIGHT_GRAY);
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DodajFilm.class.getResource("/javax/swing/plaf/metal/icons/ocean/iconify.gif")));
+		setMinimumSize(new Dimension(300, 370));
 		setTitle("Dodaj novi film ");
 		getContentPane().setMaximumSize(new Dimension(100, 150));
-		setPreferredSize(new Dimension(150, 150));
+		setPreferredSize(new Dimension(120, 150));
 		getContentPane().setSize(new Dimension(120, 100));
 		getContentPane().setPreferredSize(new Dimension(10, 10));
 		getContentPane().setLayout(null);
 		
-		JLabel lblImefilma = new JLabel("Ime filma");
+		JLabel lblImefilma = new JLabel("Ime filma:");
 		lblImefilma.setBounds(36, 33, 77, 14);
 		getContentPane().add(lblImefilma);
 		
 		txtIme = new JTextField();
-		txtIme.setBounds(159, 30, 86, 20);
+		txtIme.setBounds(147, 30, 86, 20);
 		getContentPane().add(txtIme);
 		txtIme.setColumns(10);
 		
-		JLabel lblOcenaFilma = new JLabel("Ocena filma");
-		lblOcenaFilma.setBounds(36, 109, 77, 14);
+		JLabel lblOcenaFilma = new JLabel("Ocena filma (1-5):");
+		lblOcenaFilma.setBounds(36, 95, 101, 14);
 		getContentPane().add(lblOcenaFilma);
 		
 		txtOcena = new JTextField();
-		txtOcena.setBounds(159, 106, 86, 20);
+		txtOcena.setBounds(147, 92, 86, 20);
 		getContentPane().add(txtOcena);
 		txtOcena.setColumns(10);
 		
-		JLabel lblZanrFilma = new JLabel("Zanr filma");
-		lblZanrFilma.setBounds(36, 69, 91, 12);
+		JLabel lblZanrFilma = new JLabel("Zanr filma:");
+		lblZanrFilma.setBounds(36, 65, 91, 12);
 		getContentPane().add(lblZanrFilma);
 		
 		txtZanr = new JTextField();
-		txtZanr.setBounds(159, 61, 86, 20);
+		txtZanr.setBounds(147, 61, 86, 20);
 		getContentPane().add(txtZanr);
 		txtZanr.setColumns(10);
 		
-		JLabel lblTrajanjeFilma = new JLabel("Trajanje filma");
-		lblTrajanjeFilma.setBounds(36, 149, 113, 14);
+		JLabel lblTrajanjeFilma = new JLabel("Trajanje filma (min):");
+		lblTrajanjeFilma.setBounds(36, 126, 113, 14);
 		getContentPane().add(lblTrajanjeFilma);
 		
 		txtTrajanje = new JTextField();
-		txtTrajanje.setBounds(159, 146, 86, 20);
+		txtTrajanje.setBounds(147, 123, 86, 20);
 		getContentPane().add(txtTrajanje);
 		txtTrajanje.setColumns(10);
 		/**
@@ -76,7 +81,7 @@ public class DodajFilm extends JFrame {
 		 */
 		JButton btnDodaj = new JButton("Dodaj");
 		btnDodaj.setMinimumSize(new Dimension(400, 500));
-		btnDodaj.setBounds(121, 193, 113, 23);
+		btnDodaj.setBounds(86, 193, 130, 23);
 		btnDodaj.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bioskop.gui.GUIKontroler.unesiFilm(txtIme.getText(), txtZanr.getText(),
@@ -93,11 +98,8 @@ public class DodajFilm extends JFrame {
 				dispose();
 			}
 		});
-		btnOdustani.setBounds(271, 193, 130, 23);
+		btnOdustani.setBounds(86, 227, 130, 23);
 		getContentPane().add(btnOdustani);
 		getContentPane().setFocusTraversalPolicy(new FocusTraversalOnArray(new Component[]{lblImefilma, txtIme, lblOcenaFilma, txtOcena, lblZanrFilma, txtZanr, lblTrajanjeFilma, txtTrajanje, btnDodaj, btnOdustani}));
 	}
-	
-	
-	
 }

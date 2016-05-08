@@ -39,6 +39,8 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.InputEvent;
 import javax.swing.ImageIcon;
+import java.awt.Color;
+import javax.swing.border.LineBorder;
 /**
  * Klasa koja sluzi kao glavni prozor pomocu koga se kordinira ostalim funkcijama.
  * @author Ana Jacimovic, Jana Djurovic i Olivera Kordic
@@ -104,6 +106,7 @@ public class BioskopGUI extends JFrame {
 		mnFile.add(mntmSave);
 		
 		JMenuItem mntmExit = new JMenuItem("Exit");
+		mntmExit.setIcon(new ImageIcon(BioskopGUI.class.getResource("/javax/swing/plaf/metal/icons/ocean/close.gif")));
 		mntmExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				GUIKontroler.izadji();
@@ -129,6 +132,7 @@ public class BioskopGUI extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		
 		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBackground(Color.WHITE);
 		contentPane.add(scrollPane, BorderLayout.CENTER);
 		
 		table = new JTable();
@@ -136,11 +140,13 @@ public class BioskopGUI extends JFrame {
 		scrollPane.setViewportView(table);
 		
 		JPanel panel = new JPanel();
+		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panel.setBackground(Color.YELLOW);
 		panel.setPreferredSize(new Dimension(170, 10));
 		contentPane.add(panel, BorderLayout.EAST);
 		
 		JLabel lblDodajFilm = new JLabel("Dodaj film");
-		lblDodajFilm.setPreferredSize(new Dimension(90, 25));
+		lblDodajFilm.setPreferredSize(new Dimension(65, 25));
 		panel.add(lblDodajFilm);
 		
 		JButton btnDodajFilm = new JButton("Dodaj Film");
@@ -181,7 +187,7 @@ public class BioskopGUI extends JFrame {
 
 		
 		JLabel lblDodajSeriju = new JLabel("Dodaj seriju");
-		lblDodajSeriju.setPreferredSize(new Dimension(90, 25));
+		lblDodajSeriju.setPreferredSize(new Dimension(80, 25));
 		panel.add(lblDodajSeriju);
 		/**
 		 * Na dugme Dodaj dodat je ActionEvent kojim se implementira funkcija dodavanja serije u listu preko GUIKontrolera.
@@ -196,7 +202,7 @@ public class BioskopGUI extends JFrame {
 		panel.add(btnDodajSeriju);
 		
 		JLabel lblPrikaziSerije = new JLabel("Prikazi serije");
-		lblPrikaziSerije.setPreferredSize(new Dimension(90, 25));
+		lblPrikaziSerije.setPreferredSize(new Dimension(80, 25));
 		panel.add(lblPrikaziSerije);
 		/**
 		 * Na dugme Prikazu je dodat ActionEvent kojim se implementira funkcija prikaza podataka preko GUIKontrolera.
@@ -212,7 +218,7 @@ public class BioskopGUI extends JFrame {
 		panel.add(btnPrikaziSerije);
 		
 		JLabel lblSacuvajListuSerija = new JLabel("Sacuvaj listu serija\r\n");
-		lblSacuvajListuSerija.setPreferredSize(new Dimension(110, 25));
+		lblSacuvajListuSerija.setPreferredSize(new Dimension(120, 25));
 		lblSacuvajListuSerija.setMinimumSize(new Dimension(100, 14));
 		panel.add(lblSacuvajListuSerija);
 		/**
@@ -244,7 +250,7 @@ public class BioskopGUI extends JFrame {
 		panel.add(button_1);
 		
 		JLabel lblIzbrisiFilm = new JLabel("Izbrisi film");
-		lblIzbrisiFilm.setPreferredSize(new Dimension(110, 14));
+		lblIzbrisiFilm.setPreferredSize(new Dimension(60, 14));
 		panel.add(lblIzbrisiFilm);
 		
 		JButton btnIzbrisiFilm = new JButton("Izbrisi film");
@@ -269,17 +275,19 @@ public class BioskopGUI extends JFrame {
 		panel.add(btnIzbrisiFilm);
 		
 		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panel_1.setBackground(Color.LIGHT_GRAY);
 		panel_1.setPreferredSize(new Dimension(150, 120));
 		contentPane.add(panel_1, BorderLayout.SOUTH);
 		panel_1.setLayout(null);
 		
 
 		JLabel lblImeKorisnika = new JLabel("Ime korisnika:");
-		lblImeKorisnika.setBounds(29, 11, 86, 14);
+		lblImeKorisnika.setBounds(81, 11, 86, 14);
 		panel_1.add(lblImeKorisnika);
 		
 		txtImeKorisnika = new JTextField();
-		txtImeKorisnika.setBounds(132, 8, 86, 20);
+		txtImeKorisnika.setBounds(188, 8, 86, 20);
 		panel_1.add(txtImeKorisnika);
 		txtImeKorisnika.setColumns(10);
 		panel_1.add(getLblIdKorisnika());
@@ -292,7 +300,7 @@ public class BioskopGUI extends JFrame {
 	private JLabel getLblIdKorisnika() {
 		if (lblIdKorisnika == null) {
 			lblIdKorisnika = new JLabel("ID korisnika:");
-			lblIdKorisnika.setBounds(29, 37, 86, 14);
+			lblIdKorisnika.setBounds(81, 37, 72, 14);
 		}
 		return lblIdKorisnika;
 	}
@@ -300,7 +308,7 @@ public class BioskopGUI extends JFrame {
 		if (textField == null) {
 			textField = new JTextField();
 			textField.setColumns(10);
-			textField.setBounds(132, 34, 86, 20);
+			textField.setBounds(188, 34, 86, 20);
 		}
 		return textField;
 	}
@@ -313,7 +321,7 @@ public class BioskopGUI extends JFrame {
 							Integer.parseInt(textField.getText()));
 				}
 			});
-			btnDodajKorisnika.setBounds(50, 65, 130, 23);
+			btnDodajKorisnika.setBounds(51, 75, 141, 23);
 		}
 		return btnDodajKorisnika;
 	}
@@ -332,7 +340,7 @@ public class BioskopGUI extends JFrame {
 					GUIKontroler.prikaziKorisnike();
 				}
 			});
-			btnPrikaziKorisnika.setBounds(228, 65, 156, 23);
+			btnPrikaziKorisnika.setBounds(214, 75, 141, 23);
 		}
 		return btnPrikaziKorisnika;
 	}
