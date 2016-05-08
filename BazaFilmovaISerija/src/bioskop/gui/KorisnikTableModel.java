@@ -50,4 +50,8 @@ public class KorisnikTableModel extends AbstractTableModel {
 		fireTableDataChanged();
 	}
 
+	public Korisnik getKorisnikByIndex(int index) {
+		return korisnici.get(index);
+	}
+
 }

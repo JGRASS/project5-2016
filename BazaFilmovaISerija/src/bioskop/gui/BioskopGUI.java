@@ -6,12 +6,12 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 import projekcije.filmovi.Film;
 import projekcije.serije.Serija;
 
 import javax.swing.JScrollPane;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.Dimension;
 import java.awt.event.ActionListener;
@@ -164,6 +164,31 @@ public class BioskopGUI extends JFrame {
 		});
 		button_1.setPreferredSize(new Dimension(120, 25));
 		panel.add(button_1);
+		
+		JLabel lblIzbrisiFilm = new JLabel("Izbrisi film");
+		lblIzbrisiFilm.setPreferredSize(new Dimension(110, 14));
+		panel.add(lblIzbrisiFilm);
+		
+		JButton btnIzbrisiFilm = new JButton("Izbrisi film");
+		btnIzbrisiFilm.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int index = table.getSelectedRow();
+				if (index == -1) {
+					GUIKontroler.porukaGreskeBiranjeReda();
+				} else {
+					int opcija = JOptionPane.showConfirmDialog(null,
+							"Da li ste sigurni da zelite da izbrisete izbrani film?", "Poruka",
+							JOptionPane.YES_NO_OPTION);
+					if (opcija == JOptionPane.YES_OPTION) {
+						FilmTableModel model = (FilmTableModel) table.getModel();
+						Film k = model.getFilmByIndex(index);
+						GUIKontroler.izbrisiFilm(k);
+					}
+				}
+			}
+		});
+		btnIzbrisiFilm.setPreferredSize(new Dimension(120, 23));
+		panel.add(btnIzbrisiFilm);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setPreferredSize(new Dimension(150, 120));

@@ -100,4 +100,18 @@ public class Metode {
 		
 		return serije;
 	}
+	
+	public static void obrisiFilm(Film f){
+		filmovi.remove(f);
+	}
+
+	public void obrisiSeriju(Serija s) {
+		serije.remove(s);
+		
+	}
+
+	public void obrisiKorisnika(Korisnik k) {
+		korisnici.remove();
+		
+	}
 }

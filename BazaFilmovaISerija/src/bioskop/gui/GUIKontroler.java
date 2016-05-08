@@ -152,8 +152,27 @@ public class GUIKontroler {
 		prozor.setLocationRelativeTo(null);
 	}
 
+	public static void izbrisiFilm(Film f){
+		metoda.obrisiFilm(f);
+		frame.osveziTabeluFilmova();
+	}
+	public static void porukaGreskeBiranjeReda() {
+		JOptionPane.showMessageDialog(frame.getContentPane(), "Izaberite podatke za brisanje!", "Greska!!!",
+				JOptionPane.ERROR_MESSAGE);
+	}
 
-	
+
+	public static void izbrisiSeriju(Serija s) {
+		metoda.obrisiSeriju(s);
+		prozor.osveziTabeluSerija();
+		
+	}
+
+
+	public static void izbrisiKorisnika(Korisnik k) {
+		metoda.obrisiKorisnika(k);
+		noviProzor.osveziTabeluKorisnika();
+	}
 }
 	
 
